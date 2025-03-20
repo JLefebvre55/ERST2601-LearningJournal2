@@ -1,0 +1,74 @@
+\documentclass{report}
+\usepackage{setspace} % Setting line spacing
+\usepackage[normalem]{ulem} % Underline
+\usepackage{caption} % Captioning figures
+\usepackage{subcaption} % Subfigures
+\usepackage{geometry} % Page layout
+\usepackage{multicol} % Columned pages
+\usepackage{array,etoolbox}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage[toc,page]{appendix}
+\usepackage{titlesec} % Section formatting
+
+\usepackage[backend=biber,style=apa,citestyle=authoryear]{biblatex}
+\DeclareLanguageMapping{english}{english-apa}
+\DeclareFieldFormat{journaltitle}{\textit{#1}}
+\DeclareFieldFormat[article]{volume}{\textit{#1}}
+\DeclareFieldFormat[misc]{title}{\textit{#1}}
+\DeclareFieldFormat[inbook]{booktitle}{\textit{#1}}
+\DeclareFieldFormat[book]{title}{\textit{#1}}
+\renewcommand*{\nameyeardelim}{\addcomma\space}
+\DeclareDelimFormat[parencite]{finalnamedelim}{\addspace\&\space} % Use `&' instead of `and' in citations
+\addbibresource{references.bib}
+
+\titleformat{\section}{\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\fontsize{12}{15}\bfseries}{\thesubsection}{1em}{}
+
+\AtBeginEnvironment{quote}{\par\onehalfspacing\small} % Block quotes
+
+% Page layout (margins, size, line spacing)
+\geometry{letterpaper, left=1in, right=1in, bottom=1in, top=1in}
+\setstretch{2}
+
+% Headers
+\pagestyle{fancy}
+\lhead{ERST2601 Learning Journal II}
+\rhead{Jayden Lefebvre}
+\setlength{\headheight}{16pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1.2cm}
+
+        \textbf{Learning Journal II}
+
+        \vspace{2cm}
+
+        Jayden Lefebvre\\
+
+        \vspace{5cm}
+        
+        Trent University\\
+        ERST 2601Y 2024WI\\
+        Dr. Dan Longboat\\
+
+        \vfill
+
+        March 31st, 2025
+        
+    \end{center}
+\end{titlepage}
+
+\thispagestyle{plain}
+\tableofcontents
+
+\clearpage
+
+% References
+\printbibliography[heading=bibintoc]
+
+\end{document}
